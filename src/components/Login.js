@@ -11,18 +11,14 @@ class Login extends React.Component {
     console.log('TOTAL RESPONSE:', response);
     console.log('friends that use this app:', response.friends.data)
     const history = this.props.history
-    if (localStorage.length === 0) {
-      this.props.loginUser(response, history);
-      history.push("/home");
-   } else {
-     history.push("/");
-   }
+    this.props.loginUser(response, history);
+    history.push("/home");
   }
 
   render () {
     return (
       <div>
-          <FacebookLogin socialId={ENV["FACEBOOK_APP_ID"]}
+          <FacebookLogin socialId='1824814727815715'    //{ENV["FACEBOOK_APP_ID"]}
                          className="facebook-login-button"
                          language="en_US"
                          scope="public_profile,email,user_friends"
