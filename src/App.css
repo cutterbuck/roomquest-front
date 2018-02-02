@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.facebook-login-button {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  border-width: calc-responsive(1, 468, 2, 1920);
+  border-style: solid;
+  color: #FFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: calc-responsive(14, 468, 18, 1920);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .3s, border-color .3s;
+  background-color: #4C69BA;
+  border-color: #4C69BA;
+  padding: calc-responsive(15, 468, 20, 1920) calc-responsive(20, 468, 25, 1920);
+}
