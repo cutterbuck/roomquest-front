@@ -5,6 +5,9 @@ import * as actions from '../actions/index';
 
 class RoomQuestContainer extends React.Component {
   render() {
+    console.log('STATE -> CURRENT USER:', this.props.currentUser)
+    console.log('STATE -> CURRENT LOCATION', this.props.currentPosition)
+    console.log('------------------------');
     return (
       <div>
         <NavBar />
@@ -13,4 +16,11 @@ class RoomQuestContainer extends React.Component {
   }
 }
 
-export default connect(() => ({}), actions)(RoomQuestContainer);
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser,
+    currentPosition: state.currentPosition
+  }
+}
+
+export default connect(mapStateToProps, actions)(RoomQuestContainer);
