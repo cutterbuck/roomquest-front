@@ -5,7 +5,6 @@ import RoomQuestContainer from './RoomQuestContainer';
 
 class Home extends React.Component {
   componentDidMount() {
-   console.log('this is Homepage props', this.props)
   }
 
   render() {

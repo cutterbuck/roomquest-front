@@ -6,8 +6,9 @@ import * as actions from '../actions/index';
 class RoomQuestContainer extends React.Component {
   render() {
     return (
-      // <NavBar />
-      <h1>Why hello there!</h1>
+      <div>
+        <NavBar />
+      </div>
     )
   }
 }
