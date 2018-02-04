@@ -26,7 +26,7 @@ class Login extends React.Component {
                          xfbml={true}
                          fields="id,email,name,picture,friends"
                          version="v2.12"
-                         buttonText="Login With Facebook" />
+                         buttonText="Continue With Facebook" />
       </div>
     );
   }
