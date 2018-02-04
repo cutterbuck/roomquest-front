@@ -92,3 +92,10 @@
 .welcome {
   text-align: center;
 }
+
+.card {
+  background-color: rgba(225, 225, 225, 0.7);
+  height: 130px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
