@@ -39,7 +39,7 @@
   z-index: -1;
 }
 
-.column {
+#column-column {
   margin-bottom: 20px;
 }
 
@@ -82,4 +82,13 @@
   background-color: #4C69BA;
   border-color: #4C69BA;
   padding: calc-responsive(15, 468, 20, 1920) calc-responsive(20, 468, 25, 1920);
+}
+
+.first.header {
+  margin-top: 25px;
+  margin-bottom: 100px
+}
+
+.welcome {
+  text-align: center;
 }

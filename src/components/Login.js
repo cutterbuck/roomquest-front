@@ -23,7 +23,7 @@ class Login extends React.Component {
         </div>
         <div className="login-style">
           <div className="ui middle aligned center aligned grid">
-            <div className="column">
+            <div id="login-column" className="column">
               <div className="ui gray image header">
                 <h1>RoomQuest</h1>
                 <div className="title">
