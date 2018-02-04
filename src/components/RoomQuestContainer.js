@@ -11,6 +11,16 @@ class RoomQuestContainer extends React.Component {
     return (
       <div>
         <NavBar />
+        <div className="ui grid container">
+          <div className="ui two column stackable grid">
+            <div className="column">
+              <h1>Search for a Roommate</h1>
+            </div>
+            <div className="column">
+              <h1>Search for a Room</h1>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

@@ -8,6 +8,8 @@ class Home extends React.Component {
     this.props.getLocation();
   }
 
+
+
   render() {
     return <RoomQuestContainer />
   }
