@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar';
-import Home from './Home';
 import VacancyForm from './VacancyForm'
 import ShowRoommates from './ShowRoommates'
 import * as actions from '../actions/index';

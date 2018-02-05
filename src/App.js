@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login';
 import Home from './components/Home';
-import VacancyForm from './components/VacancyForm';
 import RoomQuestContainer from './components/RoomQuestContainer';
 
 
