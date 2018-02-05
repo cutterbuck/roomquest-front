@@ -37,3 +37,9 @@ export function getLocation() {
     })
   }
 }
+
+// export function postVacancy() {
+//   return (dispatch) => {
+//     console.log('')
+//   }
+// }
