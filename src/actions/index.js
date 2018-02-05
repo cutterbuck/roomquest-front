@@ -38,8 +38,9 @@ export function getLocation() {
   }
 }
 
-// export function postVacancy() {
+// export function postVacancy(data) {
 //   return (dispatch) => {
-//     console.log('')
+//     return fetch(`${API_ROOT}/home`, {
+//     debugger
 //   }
 // }

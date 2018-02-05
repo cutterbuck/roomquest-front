@@ -2,23 +2,38 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 
+const google = window.google
 
- class VacancyForm extends React.Component {
+class VacancyForm extends React.Component {
    constructor() {
      super();
 
      this.state = {
        address: '',
        aptNum: '',
-       state: null,
+       city: '',
+       state: '',
        zipcode: '',
        description: '',
        phone: ''
      }
    }
 
+  handleSubmit = e => {
+      const data = this.state
+      const address = `${this.state.address}, ${this.state.aptNum}, ${this.state.state}, ${this.state.zipcode}`
+      console.log(`${address}`)
+      var geocoder = new google.maps.Geocoder();
+      geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        var latitude = results[0].geometry.location.lat();
+        var longitude = results[0].geometry.location.lng();
+        console.log(latitude, longitude);
+      }
+    });
+  }
+
    handleChange = e => {
-     //debugger
      this.setState({
        [e.target.name]: e.target.value
      })
@@ -47,6 +62,10 @@ import * as actions from '../actions/index';
                     </div>
 
                     <div className="two fields">
+                      <div className="field">
+                        <label>City</label>
+                        <input onChange={this.handleChange} type="text" name="city" placeholder="City"/>
+                      </div>
                       <div className="field">
                         <label>State</label>
                         <select onChange={this.handleChange} name="state" className="ui fluid dropdown">
@@ -104,18 +123,19 @@ import * as actions from '../actions/index';
                           <option value="WY">Wyoming</option>
                         </select>
                       </div>
+                    </div>
+
                     <div className="field">
                       <label>Zip Code</label>
                       <input onChange={this.handleChange} type="text" name="zipcode" placeholder="Zip Code"/>
                     </div>
-                  </div>
 
                     <div className="field">
                       <label>Description</label>
                       <textarea name="description" onChange={this.handleChange}></textarea>
                     </div>
 
-                    <div className="ui button" tabIndex="0">Submit Vacancy</div>
+                    <div className="ui button" onClick={this.handleSubmit} tabIndex="0">Submit Vacancy</div>
                   </div>
                 </div>
 
