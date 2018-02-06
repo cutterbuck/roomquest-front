@@ -15,22 +15,39 @@ class VacancyForm extends React.Component {
        state: '',
        zipcode: '',
        description: '',
-       phone: ''
+       phone: '',
+       lat: null,
+       long: null,
+       userId: null
      }
    }
 
-  handleSubmit = e => {
+   // getLocation = () => function(address) {
+   //   var geocoder = new google.maps.Geocoder();
+   //   geocoder.geocode( { 'address': address}, function(results, status) {
+   //
+   //   if (status == google.maps.GeocoderStatus.OK) {
+   //       var latitude = results[0].geometry.location.lat();
+   //       var longitude = results[0].geometry.location.lng();
+   //       console.log(latitude, longitude);
+   //       }
+   //   });
+   // }
+
+   handleSubmit = e => {
       const data = this.state
-      const address = `${this.state.address}, ${this.state.aptNum}, ${this.state.state}, ${this.state.zipcode}`
-      console.log(`${address}`)
-      var geocoder = new google.maps.Geocoder();
-      geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status === google.maps.GeocoderStatus.OK) {
-        var latitude = results[0].geometry.location.lat();
-        var longitude = results[0].geometry.location.lng();
-        console.log(latitude, longitude);
-      }
-    });
+      const address = `${this.state.address}, ${this.state.aptNum}, ${this.state.city}, ${this.state.state}, ${this.state.zipcode}`
+
+      // var geocoder = new google.maps.Geocoder();
+      // geocoder.geocode( { 'address': address}, function(results, status) {
+      //   if (status == google.maps.GeocoderStatus.OK) {
+      //     var latitude = results[0].geometry.location.lat();
+      //     var longitude = results[0].geometry.location.lng();
+      //     //debugger
+      //   }
+      // }.bind(this));
+      console.log('user id in vacancy form', this.props.currentUser.id)
+      this.props.postVacancy(data);
   }
 
    handleChange = e => {
@@ -40,7 +57,8 @@ class VacancyForm extends React.Component {
    }
 
   render() {
-    console.log('vacancy form state:', this.state);
+    //console.log('vacancy form state:', this.state);
+    console.log(this.props.currentUser)
     return (
       <form className="ui form">
         <div className="ui grid container">

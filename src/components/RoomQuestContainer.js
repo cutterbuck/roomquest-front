@@ -5,12 +5,10 @@ import VacancyForm from './VacancyForm'
 import ShowRoommates from './ShowRoommates'
 import * as actions from '../actions/index';
 import { Route, Switch } from 'react-router-dom';
+import withAuth from '../hocs/withAuth';
 
 class RoomQuestContainer extends React.Component {
   render() {
-    console.log('STATE -> CURRENT USER:', this.props.currentUser)
-    console.log('STATE -> CURRENT LOCATION', this.props.currentPosition)
-    console.log('------------------------');
 
     return (
       <div>
@@ -33,4 +31,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, actions)(RoomQuestContainer);
+export default connect(mapStateToProps, actions)(withAuth(RoomQuestContainer));   //wrap withAuth(RoomQuestContainer) here eventually

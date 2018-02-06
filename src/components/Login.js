@@ -10,7 +10,6 @@ class Login extends React.Component {
   responseFacebook = (response) => {
     console.log('------------------------------------');
     console.log('TOTAL RESPONSE:', response);
-    console.log('friends that use this app:', response.friends.data)
     const history = this.props.history
     this.props.loginUser(response, history);
     history.push("/home");

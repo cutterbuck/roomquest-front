@@ -3,6 +3,8 @@ import * as actions from '../actions/index';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
+import withAuth from '../hocs/withAuth';
+
 
 
 class Home extends React.Component {
@@ -11,8 +13,11 @@ class Home extends React.Component {
   }
 
   render() {
+    console.log('STATE -> CURRENT USER:', this.props.currentUser)
+    console.log('STATE -> CURRENT LOCATION', this.props.currentPosition)
+    console.log('------------------------');
     const loggedIn = !!this.props.currentUser.name
-    console.log('logged in T/F:', loggedIn)
+    //console.log('logged in T/F:', loggedIn)
     return (
       <div>
         <NavBar />
@@ -53,4 +58,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, actions)(Home);
+export default connect(mapStateToProps, actions)(withAuth(Home));

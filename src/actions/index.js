@@ -5,6 +5,23 @@ const headers = {
   'Accepts': 'application/json'
 };
 
+export function fetchUser(token) {
+  return (dispatch) => {
+    return fetch(`${API_ROOT}/current_user`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Accepts': 'application/json',
+        'Authorization': token
+      }
+    }).then(resp => resp.json())
+    // .then(user => {
+    //   debugger
+    //   console.log('this is user in fetchUSEr', user)
+    //   dispatch({ type: 'LOGIN_USER', payload: user })
+    // })
+  }
+}
+
 
 export function loginUser(response, history) {
   return (dispatch) => {
@@ -14,7 +31,10 @@ export function loginUser(response, history) {
       body: JSON.stringify({response})
     }).then(resp => resp.json())
     .then(user => {
-      localStorage.setItem("jwt", user.code)
+      debugger  //id is correct now
+      // console.log('this is user in LOGINUSER', user)
+      localStorage.setItem("token", user.code)
+      debugger
       dispatch({ type: 'LOGIN_USER', payload: user.currentUser })
       history.push("/home")
     })
@@ -38,9 +58,12 @@ export function getLocation() {
   }
 }
 
-// export function postVacancy(data) {
-//   return (dispatch) => {
-//     return fetch(`${API_ROOT}/home`, {
-//     debugger
-//   }
-// }
+export function postVacancy(data) {
+  return (dispatch) => {
+    return fetch(`${API_ROOT}/vacancies`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({data})
+    })
+  }
+}
