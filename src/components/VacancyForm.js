@@ -5,8 +5,8 @@ import * as actions from '../actions/index';
 const google = window.google
 
 class VacancyForm extends React.Component {
-   constructor() {
-     super();
+   constructor(props) {
+     super(props);
 
      this.state = {
        address: '',
@@ -18,7 +18,7 @@ class VacancyForm extends React.Component {
        phone: '',
        lat: null,
        long: null,
-       userId: null
+       email: props.currentUser.email
      }
    }
 

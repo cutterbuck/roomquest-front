@@ -5,20 +5,17 @@ const headers = {
   'Accepts': 'application/json'
 };
 
-export function fetchUser(token) {
+export function fetchUser() {
   return (dispatch) => {
+    const token = localStorage.getItem("token")
     return fetch(`${API_ROOT}/current_user`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accepts': 'application/json',
-        'Authorization': token
-      }
+      headers: {'Authorization': token}
     }).then(resp => resp.json())
-    // .then(user => {
-    //   debugger
-    //   console.log('this is user in fetchUSEr', user)
-    //   dispatch({ type: 'LOGIN_USER', payload: user })
-    // })
+    .then(user => {
+      debugger  ////your shit is fucked here man!
+      console.log('this is user in fetchUSEr', user)
+      dispatch({ type: 'LOGIN_USER', payload: user })
+    })
   }
 }
 
@@ -31,10 +28,8 @@ export function loginUser(response, history) {
       body: JSON.stringify({response})
     }).then(resp => resp.json())
     .then(user => {
-      debugger  //id is correct now
       // console.log('this is user in LOGINUSER', user)
       localStorage.setItem("token", user.code)
-      debugger
       dispatch({ type: 'LOGIN_USER', payload: user.currentUser })
       history.push("/home")
     })
