@@ -18,7 +18,6 @@ export function fetchUser() {
   }
 }
 
-
 export function loginUser(response, history) {
   return (dispatch) => {
     return fetch(`${API_ROOT}/home`, {

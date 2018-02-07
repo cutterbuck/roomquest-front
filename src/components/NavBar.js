@@ -20,7 +20,7 @@ class NavBar extends React.Component {
           </div>
 
           <div className="right aligned item">
-            <Link to="/app/rooms-Search">
+            <Link to="/app/rooms-search">
               <div className="content">Find Rooms</div>
             </Link>
           </div>
