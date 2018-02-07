@@ -12,7 +12,6 @@ export function fetchUser() {
       headers: {'Authorization': token}
     }).then(resp => resp.json())
     .then(user => {
-      debugger  ////your shit is fucked here man!
       console.log('this is user in fetchUSEr', user)
       dispatch({ type: 'LOGIN_USER', payload: user })
     })

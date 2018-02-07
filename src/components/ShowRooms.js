@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ShowRoommates extends React.Component {
+class ShowRooms extends React.Component {
 
   render() {
     return (
@@ -11,4 +11,4 @@ class ShowRoommates extends React.Component {
   }
 }
 
-export default ShowRoommates;
+export default ShowRooms;

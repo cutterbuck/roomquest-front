@@ -48,6 +48,7 @@ class VacancyForm extends React.Component {
       // }.bind(this));
       console.log('user id in vacancy form', this.props.currentUser.id)
       this.props.postVacancy(data);
+      this.props.history.push("app/roommates-search")
   }
 
    handleChange = e => {
@@ -183,9 +184,11 @@ class VacancyForm extends React.Component {
                   <div className="field">
                     <label>Phone Number</label>
                       <div className="field">
-                        <div className="field">
-                          <input name="phone" onChange={this.handleChange} type="text" placeholder="(xxx) xxx-xxxx"/>
-                        </div>
+
+                          <div className="field">
+                            <input name="phone" onChange={this.handleChange} type="text" placeholder="(xxx) xxx-xxxx"/>
+                          </div>
+
                       </div>
                   </div>
                 </div>

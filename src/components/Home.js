@@ -35,7 +35,7 @@ class Home extends React.Component {
               </Link>
             </div>
             <div className="column">
-              <Link to={'/app/roommates-list'}>
+              <Link to={'/app/rooms-search'}>
                 <div className="card">
                   <div className="content">
                     <div className="header"><h2>Find a Roommate</h2></div>

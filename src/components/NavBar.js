@@ -14,6 +14,18 @@ class NavBar extends React.Component {
       <div className="ui inverted black menu fixed">
         <div className="right menu">
           <div className="right aligned item">
+            <Link to="/app/roommates-search">
+              <div className="content">Find Roommates</div>
+            </Link>
+          </div>
+
+          <div className="right aligned item">
+            <Link to="/app/rooms-Search">
+              <div className="content">Find Rooms</div>
+            </Link>
+          </div>
+
+          <div className="right aligned item">
             <Link to="/home">
               <div className="content">Home</div>
             </Link>
