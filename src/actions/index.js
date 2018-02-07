@@ -45,7 +45,7 @@ export function getLocation() {
     navigator.geolocation.getCurrentPosition(position => {
       dispatch({
        type: 'SET_CURRENT_POSITION',
-       currentPosition: {lat: position.coords.latitude, long: position.coords.longitude}
+       currentPosition: {lat: position.coords.latitude, lng: position.coords.longitude}
      })
     })
   }

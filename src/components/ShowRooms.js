@@ -1,11 +1,12 @@
 import React from 'react';
+import Map from './Map'
 
 class ShowRooms extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>I am there, not here</h1>
+      <div style={{width: '90%', height: '450px'}}>
+        <Map />
       </div>
     )
   }

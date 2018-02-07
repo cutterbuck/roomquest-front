@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 
-const google = window.google
-
 class VacancyForm extends React.Component {
    constructor(props) {
      super(props);

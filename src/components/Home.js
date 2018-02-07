@@ -17,7 +17,7 @@ class Home extends React.Component {
     console.log('STATE -> CURRENT LOCATION', this.props.currentPosition)
     console.log('------------------------');
     const loggedIn = !!this.props.currentUser.name
-    //console.log('logged in T/F:', loggedIn)
+
     return (
       <div>
         <NavBar />
