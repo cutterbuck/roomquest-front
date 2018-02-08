@@ -105,6 +105,11 @@
   margin-top: 20px;
 }
 
-/* .second.parent.div {
-  margin-top: 49.5px;
-} */
+.rooms.first.header {
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+.display.rooms {
+  text-align: center;
+}

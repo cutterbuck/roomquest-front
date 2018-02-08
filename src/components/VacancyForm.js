@@ -15,7 +15,7 @@ class VacancyForm extends React.Component {
        description: '',
        phone: '',
        lat: null,
-       long: null,
+       lng: null,
        email: props.currentUser.email
      }
    }
@@ -34,19 +34,21 @@ class VacancyForm extends React.Component {
 
    handleSubmit = e => {
       const data = this.state
-      const address = `${this.state.address}, ${this.state.aptNum}, ${this.state.city}, ${this.state.state}, ${this.state.zipcode}`
+      const address = `${this.state.address.split(' ').join('+')}+${this.state.city.split(' ').join('+')}+${this.state.state}+${this.state.zipcode}`
 
-      // var geocoder = new google.maps.Geocoder();
-      // geocoder.geocode( { 'address': address}, function(results, status) {
-      //   if (status == google.maps.GeocoderStatus.OK) {
-      //     var latitude = results[0].geometry.location.lat();
-      //     var longitude = results[0].geometry.location.lng();
-      //     //debugger
-      //   }
-      // }.bind(this));
-      console.log('user id in vacancy form', this.props.currentUser.id)
-      this.props.postVacancy(data);
-      this.props.history.push("app/roommates-search")
+      this.props.getVacancyGeoLocation(address).then(resp => {
+        const lat = resp.results[0].geometry.location.lat;
+        const lng = resp.results[0].geometry.location.lng;
+        const coords = {lat: lat, lng: lng};
+        return coords
+      }).then(coords => {
+        data.lat = coords.lat
+        data.lng = coords.lng
+        return data
+      }).then(data => {
+        this.props.postVacancy(data);
+        this.props.history.push("app/roommates-search")
+      })
   }
 
    handleChange = e => {

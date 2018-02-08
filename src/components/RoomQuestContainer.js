@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import VacancyForm from './VacancyForm'
-import ShowRooms from './ShowRooms'
+import RoomsContainer from './RoomsContainer'
 import VacancyResults from './VacancyResults'
 import * as actions from '../actions/index';
 import { Route, Switch } from 'react-router-dom';
@@ -21,7 +21,7 @@ class RoomQuestContainer extends React.Component {
           <Switch>
             <Route exact path="/app/add-vacancy" component={VacancyForm} />
             <Route exact path="/app/roommates-search" component={VacancyResults} />
-            <Route exact path="/app/rooms-search" component={ShowRooms} />
+            <Route exact path="/app/rooms-search" component={RoomsContainer} />
           </Switch>
         </div>
       </div>

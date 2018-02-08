@@ -51,6 +51,13 @@ export function getLocation() {
   }
 }
 
+export function getVacancyGeoLocation(address) {
+  return (dispatch) => {
+    return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyDTbREAL0OVjYJ7OHRFSM0ng1CBc2jC7Pk`)
+    .then(resp => resp.json())
+  }
+}
+
 export function postVacancy(data) {
   return (dispatch) => {
     return fetch(`${API_ROOT}/vacancies`, {
