@@ -24,7 +24,7 @@ class Login extends React.Component {
           <div className="ui middle aligned center aligned grid">
             <div id="login-column" className="column">
               <div className="ui gray image header">
-                <h1>RoomQuest</h1>
+                <h1>Sherl<i id="logo" className={`small violet search icon`}></i>ck Homes</h1>
                 <div className="title">
                   Find your new home!<br></br>
                   Search for your next roommate!

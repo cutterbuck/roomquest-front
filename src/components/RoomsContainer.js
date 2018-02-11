@@ -1,7 +1,22 @@
 import React from 'react';
-import Map from './Map'
+import Map from './Map';
+import RoomCard from './RoomCard'
+import { connect } from 'react-redux';
+import * as actions from '../actions/index';
 
 class RoomsContainer extends React.Component {
+  state = {
+    center: this.props.currentPosition,
+    zoom: 11
+  }
+
+
+  updateSearchCenter = (search) => {
+    this.setState({
+      center: {lat: search[0].geometry.viewport.f.f, lng: search[0].geometry.viewport.b.b},
+      zoom: 9
+    })
+  }
 
   render() {
     return (
@@ -10,13 +25,15 @@ class RoomsContainer extends React.Component {
           <div className="rooms first header">
             <h1 className="display rooms">Available Rooms</h1>
           </div>
-          <div className="column">
-            <h1>Room cards here</h1>
+          <div className="six wide column">
+            <RoomCard />
           </div>
 
-          <div className="column">
-            <div style={{width: '100%', height: '450px'}}>
-              <Map />
+          <div className="ten wide column">
+            <div class="ui sticky">
+            <div style={{width: '100%', height: '600px'}}>
+              <Map updateSearchCenter={this.updateSearchCenter} center={this.state.center} zoom={this.state.zoom}/>
+            </div>
             </div>
           </div>
         </div>
@@ -25,4 +42,11 @@ class RoomsContainer extends React.Component {
   }
 }
 
-export default RoomsContainer;
+const mapStateToProps = state => {
+  return {
+    currentPosition: state.currentPosition
+  }
+}
+
+
+export default connect(mapStateToProps, actions)(RoomsContainer);

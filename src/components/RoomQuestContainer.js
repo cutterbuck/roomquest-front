@@ -36,4 +36,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, actions)(withAuth(RoomQuestContainer));   //wrap withAuth(RoomQuestContainer) here eventually
+export default connect(mapStateToProps, actions)(withAuth(RoomQuestContainer));

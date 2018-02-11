@@ -12,6 +12,10 @@ class Home extends React.Component {
     this.props.getLocation();
   }
 
+  handleClick = e => {
+    {this.props.currentUser.vacancy ? this.props.history.push("/app/roommates-search") : this.props.history.push("/app/add-vacancy")}
+  }
+
   render() {
     console.log('STATE -> CURRENT USER:', this.props.currentUser)
     console.log('STATE -> CURRENT LOCATION', this.props.currentPosition)
@@ -23,23 +27,21 @@ class Home extends React.Component {
         <NavBar />
         <div className="ui grid container">
           <div className="ui two column stackable grid">
-            {loggedIn ? (<div className="first header"><h1 className="welcome">Welcome to RoomQuest, {this.props.currentUser.name.split(" ")[0]}</h1></div>) : null}
+            {loggedIn ? (<div className="first header"><h1 className="welcome">Welcome to Sherlock Homes, {this.props.currentUser.name.split(" ")[0]}</h1></div>) : null}
             <div className="column">
-              <Link to={'/app/add-vacancy'}>
-                <div className="card">
-                  <div className="content">
-                    <div className="header"><h2>Find a Room</h2></div>
-                    <div className="description">Looking for a new place to live?<br></br>Moving to a new city?<br></br><br></br>See which friends and acquaintances have available rooms.</div>
+                <div onClick={this.handleClick} className="welcome-button">
+                  <div className="welcome content">
+                    <div className="header"><h2 className="welcome headers">Find a Roommate</h2></div>
+                    <div className="description">Is your roommate moving away?<br></br>Need to fill an empty room?<br></br><br></br>Post a vacancy to see which friends and acquaintances might be interested.</div>
                   </div>
                 </div>
-              </Link>
             </div>
             <div className="column">
               <Link to={'/app/rooms-search'}>
-                <div className="card">
-                  <div className="content">
-                    <div className="header"><h2>Find a Roommate</h2></div>
-                    <div className="description">Is one of your roommates moving away?<br></br>Have an empty room?<br></br><br></br>Post a vacancy to see which friends and acquaintances might be interested.</div>
+                <div className="welcome-button">
+                  <div className="welcome content">
+                    <div className="header"><h2 className="welcome headers">Find a Room</h2></div>
+                      <div className="description">Looking for a place to live?<br></br>Moving to a new city?<br></br><br></br>See which friends and acquaintances have available rooms.</div>
                   </div>
                 </div>
               </Link>

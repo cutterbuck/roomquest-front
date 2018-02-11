@@ -1,4 +1,4 @@
-.App {
+.App{
   text-align: center;
 }
 
@@ -93,12 +93,14 @@
   text-align: center;
 }
 
-.card {
-  background-color: rgba(225, 225, 225, 0.7);
-  height: 150px;
+.welcome-button {
+  background-color: rgba(150,150,150,0.3);
+  height: 160px;
   margin-left: 20px;
   margin-right: 20px;
   padding: 15px;
+  min-width: 95%;
+  border-radius: 4px;
 }
 
 .ui.grid.container {
@@ -112,4 +114,52 @@
 
 .display.rooms {
   text-align: center;
+}
+
+.ui.header.rooms {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.room.content {
+  padding: 0px;
+}
+
+.roomcards.ui.grid.container {
+  padding: 0px;
+  margin-top: 0px;
+}
+
+.ui.two.column.stackable.grid.roomcards {
+  padding: 0px;
+}
+
+#logo {
+  margin-right: 0px;
+}
+
+.content {
+  color: white;
+}
+
+.description {
+  color: black;
+  margin-top: 12px;
+  text-align: left;
+}
+
+.ui.middle.aligned.center.aligned.grid {
+  background-color: rgba(150,150,150,0.3)
+}
+
+.searchBar {
+  margin-top: 15px;
+  margin-left: 15px;
+  width: 210px;
+  height: 32px;
+}
+
+.welcome.headers {
+  color: rgb(89,47,194);
 }

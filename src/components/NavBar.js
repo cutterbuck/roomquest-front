@@ -3,33 +3,41 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import Logout from './Logout';
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
 class NavBar extends React.Component {
 
-
-
+  handleClick = e => {
+    {this.props.currentUser.vacancy ? this.props.history.push("/app/roommates-search") : this.props.history.push("/app/add-vacancy")}
+  }
 
   render() {
     return (
+
       <div className="ui inverted black menu fixed">
+        <a className="item">
+          <h2 className="ui header">
+            <Link to="/home">
+              <div className="content">Sherl<i id="logo" className={`violet search icon`}></i>ck Homes</div>
+            </Link>
+          </h2>
+        </a>
         <div className="right menu">
-          <div className="right aligned item">
-            <Link to="/app/roommates-search">
-              <div className="content">Find Roommates</div>
-            </Link>
-          </div>
+          <a className="right aligned item">
+            <div onClick={this.handleClick} className="content">Browse Roommates</div>
+          </a>
 
-          <div className="right aligned item">
+          <a className="right aligned item">
             <Link to="/app/rooms-search">
-              <div className="content">Find Rooms</div>
+              <div className="content">Browse Rooms</div>
             </Link>
-          </div>
+          </a>
 
-          <div className="right aligned item">
+          <a className="right aligned item">
             <Link to="/home">
               <div className="content">Home</div>
             </Link>
-          </div>
+          </a>
           <Logout />
         </div>
       </div>
@@ -43,4 +51,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, actions)(NavBar);
+export default withRouter(connect(mapStateToProps, actions)(NavBar));

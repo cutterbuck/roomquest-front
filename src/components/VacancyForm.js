@@ -20,18 +20,6 @@ class VacancyForm extends React.Component {
      }
    }
 
-   // getLocation = () => function(address) {
-   //   var geocoder = new google.maps.Geocoder();
-   //   geocoder.geocode( { 'address': address}, function(results, status) {
-   //
-   //   if (status == google.maps.GeocoderStatus.OK) {
-   //       var latitude = results[0].geometry.location.lat();
-   //       var longitude = results[0].geometry.location.lng();
-   //       console.log(latitude, longitude);
-   //       }
-   //   });
-   // }
-
    handleSubmit = e => {
       const data = this.state
       const address = `${this.state.address.split(' ').join('+')}+${this.state.city.split(' ').join('+')}+${this.state.state}+${this.state.zipcode}`
@@ -47,7 +35,7 @@ class VacancyForm extends React.Component {
         return data
       }).then(data => {
         this.props.postVacancy(data);
-        this.props.history.push("app/roommates-search")
+        this.props.history.push("/roommates-search")
       })
   }
 
@@ -58,7 +46,6 @@ class VacancyForm extends React.Component {
    }
 
   render() {
-    //console.log('vacancy form state:', this.state);
     console.log(this.props.currentUser)
     return (
       <form className="ui form">
