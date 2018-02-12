@@ -11,7 +11,6 @@ class RoomView extends React.Component {
     const user = this.props.currentUser.associations_with_rooms.find(user => user.id === room.user_id);
     const ts = new Date(room.created_at);
     const postedDate = ts.toDateString();
-    console.log('THESE ARE RV PROPS', this.props)
     return (
     <div class="parent">
       <div class="ui card">

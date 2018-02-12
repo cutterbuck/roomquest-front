@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import NavBar from './NavBar';
 import VacancyForm from './VacancyForm'
 import RoomsContainer from './RoomsContainer'
-import VacancyResults from './VacancyResults'
+import RoommatesContainer from './RoommatesContainer'
 import * as actions from '../actions/index';
 import { Route, Switch } from 'react-router-dom';
 import withAuth from '../hocs/withAuth';
@@ -18,7 +18,7 @@ class RoomQuestContainer extends React.Component {
         <div className="ui grid container">
           <Switch>
             <Route exact path="/app/add-vacancy" component={VacancyForm} />
-            <Route exact path="/app/roommates" component={VacancyResults} />
+            <Route exact path="/app/roommates" component={RoommatesContainer} />
             <Route path="/app/rooms" component={RoomsContainer} />
           </Switch>
         </div>

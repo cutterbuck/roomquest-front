@@ -14,7 +14,6 @@ class Map extends React.Component {
 
 
   render() {
-    console.log('props inside map', this.props)
 
     return (
       <GoogleMap

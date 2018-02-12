@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 class RoomCards extends React.Component {
 
   render() {
-    console.log("ROOMCARD CURRENT USER", this.props.currentUser.vacant_rooms)
     return (
       <div class="ui special cards">
         {this.props.currentUser.vacant_rooms.map((vr, i) => {
@@ -43,10 +42,8 @@ class RoomCards extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser,
+    currentUser: state.currentUser
   }
 }
 
 export default connect(mapStateToProps, actions)(RoomCards);
-
-// onClick={() => props.updateCenter({lat: act.lat, lng: act.long})}

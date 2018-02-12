@@ -35,7 +35,7 @@ class VacancyForm extends React.Component {
         return data
       }).then(data => {
         this.props.postVacancy(data);
-        this.props.history.push("/roommates-search")
+        this.props.history.push("/app/roommates")
       })
   }
 
@@ -46,7 +46,6 @@ class VacancyForm extends React.Component {
    }
 
   render() {
-    console.log(this.props.currentUser)
     return (
       <form className="ui form">
         <div className="ui grid container">
