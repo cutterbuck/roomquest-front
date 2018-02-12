@@ -1,8 +1,22 @@
 import React from 'react';
 import RoommateCards from './RoommateCards';
 import RoommateView from './RoommateView';
+import { connect } from 'react-redux';
+import * as actions from '../actions/index';
 
 class RoommatesContainer extends React.Component {
+  state = {
+    currentAssociation: this.props.currentUser.associations_without_rooms[0]
+  }
+
+  selectView = (association) => {
+    this.setState({currentAssociation: association})
+  }
+
+  handleSelectDelete = e => {
+    const id = this.props.currentUser.vacancy.id;
+    this.props.deleteVacancy(id);
+  }
 
   render() {
     return (
@@ -11,12 +25,13 @@ class RoommatesContainer extends React.Component {
           <div className="rooms first header">
             <h1 className="display rooms">Potential Roommates</h1>
           </div>
-          <div className="six wide column">
-            <RoommateCards />
+          <div className="seven wide column">
+            <RoommateCards selectView={this.selectView} />
           </div>
-
-          <div className="ten wide column">
-            <RoommateView />
+          <div className="one wide column">
+          </div>
+          <div className="eight wide column">
+            <RoommateView currentAssociation={this.state.currentAssociation} handleSelectDelete={this.handleSelectDelete} />
           </div>
         </div>
       </div>
@@ -24,4 +39,10 @@ class RoommatesContainer extends React.Component {
   }
 }
 
-export default RoommatesContainer;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps, actions)(RoommatesContainer);

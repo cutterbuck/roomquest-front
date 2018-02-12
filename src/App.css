@@ -166,3 +166,7 @@
 .welcome.headers {
   color: rgb(89,47,194);
 }
+
+.roommate-view-parent {
+  max-width: 80%;
+}

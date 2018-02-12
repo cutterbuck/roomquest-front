@@ -66,3 +66,12 @@ export function postVacancy(data) {
     })
   }
 }
+
+export function deleteVacancy(id) {
+  return (dispatch) => {
+    return fetch(`${API_ROOT}/vacancies/${id}`, {
+      method: 'DELETE',
+      headers: headers
+    })
+  }
+}
