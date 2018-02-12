@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import MarkerComp from './MarkerComp';
 import SearchBox from './SearchBox';
+import CurrentLocation from './CurrentLocation'
 
 class Map extends React.Component {
   static defaultProps = {
@@ -14,19 +15,22 @@ class Map extends React.Component {
 
   render() {
     console.log('props inside map', this.props)
-    console.log('this.props.currentPosition', this.props.currentPosition)
 
     return (
       <GoogleMap
         apiKey={'AIzaSyDTbREAL0OVjYJ7OHRFSM0ng1CBc2jC7Pk'}
         center={this.props.center}
-        zoom={this.props.zoom}
-        >
+        zoom={this.props.zoom} >
 
+        <CurrentLocation lat={this.props.currentPosition.lat} lng={this.props.currentPosition.lng} />
         <SearchBox className="searchBar" updateSearchCenter={this.props.updateSearchCenter}/>
 
         {this.props.currentUser.vacant_rooms.map((marker, i) => {
-          return <MarkerComp className="existingMarker" key={i} lat={parseFloat(marker.lat)} lng={parseFloat(marker.lng)} color={"black"}/>
+          return <MarkerComp  className="existingMarker" key={i}
+                              lat={parseFloat(marker.lat)}
+                              lng={parseFloat(marker.lng)}
+                              handleMarkerClick={this.props.handleMarkerClick}
+                              marker={marker} />
         })}
 
         </GoogleMap>

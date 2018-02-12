@@ -189,7 +189,7 @@ class VacancyForm extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser,
+    currentUser: state.currentUser
   }
 }
 

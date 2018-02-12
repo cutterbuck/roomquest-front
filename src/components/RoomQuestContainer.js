@@ -11,8 +11,6 @@ import withAuth from '../hocs/withAuth';
 class RoomQuestContainer extends React.Component {
 
   render() {
-
-    console.log('vacancy?', !!this.props.currentUser.vacancy)
     return (
 
       <div>
@@ -20,8 +18,8 @@ class RoomQuestContainer extends React.Component {
         <div className="ui grid container">
           <Switch>
             <Route exact path="/app/add-vacancy" component={VacancyForm} />
-            <Route exact path="/app/roommates-search" component={VacancyResults} />
-            <Route exact path="/app/rooms-search" component={RoomsContainer} />
+            <Route exact path="/app/roommates" component={VacancyResults} />
+            <Route path="/app/rooms" component={RoomsContainer} />
           </Switch>
         </div>
       </div>

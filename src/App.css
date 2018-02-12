@@ -124,6 +124,7 @@
 
 .room.content {
   padding: 0px;
+  padding-top: 10px;
 }
 
 .roomcards.ui.grid.container {
@@ -133,6 +134,8 @@
 
 .ui.two.column.stackable.grid.roomcards {
   padding: 0px;
+  padding-left: 15px;
+  padding-bottom: 10px;
 }
 
 #logo {

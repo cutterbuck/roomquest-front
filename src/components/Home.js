@@ -13,7 +13,7 @@ class Home extends React.Component {
   }
 
   handleClick = e => {
-    {this.props.currentUser.vacancy ? this.props.history.push("/app/roommates-search") : this.props.history.push("/app/add-vacancy")}
+    {this.props.currentUser.vacancy ? this.props.history.push("/app/roommates") : this.props.history.push("/app/add-vacancy")}
   }
 
   render() {
@@ -37,7 +37,7 @@ class Home extends React.Component {
                 </div>
             </div>
             <div className="column">
-              <Link to={'/app/rooms-search'}>
+              <Link to={'/app/rooms'}>
                 <div className="welcome-button">
                   <div className="welcome content">
                     <div className="header"><h2 className="welcome headers">Find a Room</h2></div>

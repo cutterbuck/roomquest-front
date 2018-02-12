@@ -8,7 +8,7 @@ import { withRouter } from 'react-router';
 class NavBar extends React.Component {
 
   handleClick = e => {
-    {this.props.currentUser.vacancy ? this.props.history.push("/app/roommates-search") : this.props.history.push("/app/add-vacancy")}
+    {this.props.currentUser.vacancy ? this.props.history.push("/app/roommates") : this.props.history.push("/app/add-vacancy")}
   }
 
   render() {
@@ -28,7 +28,7 @@ class NavBar extends React.Component {
           </a>
 
           <a className="right aligned item">
-            <Link to="/app/rooms-search">
+            <Link to="/app/rooms">
               <div className="content">Browse Rooms</div>
             </Link>
           </a>
