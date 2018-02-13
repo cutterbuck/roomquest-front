@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
-import { Link } from 'react-router-dom';
 
 class RoommateCards extends React.Component {
+  
   render() {
     return (
       <div class="ui fluid cards">
         {this.props.currentUser.associations_without_rooms.map((awr, i) => {
-          const userSlug = awr.name.split(" ").join("-")
           return (
             <a className="ui fluid card" key={i} onClick={() => this.props.selectView(awr)}>
               <div className="content">

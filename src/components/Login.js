@@ -1,12 +1,11 @@
 import React from 'react';
 import { FacebookLogin } from 'react-facebook-login-component';
-// import { Link } from 'react-router-dom';
 import * as actions from '../actions/index';
 import { connect }  from 'react-redux';
 
 
 class Login extends React.Component {
-
+  
   responseFacebook = (response) => {
     console.log('------------------------------------');
     console.log('TOTAL RESPONSE:', response);
@@ -29,13 +28,13 @@ class Login extends React.Component {
                   Find your new home!<br></br>
                   Search for your next roommate!
                 </div>
-                <FacebookLogin socialId='1824814727815715'    //{process.env.NODE_ENV}
+                <FacebookLogin socialId='1824814727815715'          //{process.env.FACEBOOK_APP_ID}
                                className="facebook-login-button"
                                language="en_US"
                                scope="public_profile,email,user_friends"
                                responseHandler={this.responseFacebook}
                                xfbml={true}
-                               fields="id,email,name,picture,friends"
+                               fields="id,email,name,picture.height(480),friends"
                                version="v2.12"
                                buttonText="Login With Facebook" />
               </div>

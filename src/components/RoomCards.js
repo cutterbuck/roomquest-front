@@ -20,7 +20,7 @@ class RoomCards extends React.Component {
                   <div className="roomcards ui grid container">
                     <div className="ui two column stackable grid roomcards">
                       <div className="column">
-                        <img className="ui centered image" src={user.profile_image_url} />
+                        <img className="ui centered image" src={user.profile_image_url} alt={user.id} />
                       </div>
                       <div className="column">
                         <h4 className="ui header">

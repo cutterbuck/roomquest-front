@@ -12,27 +12,25 @@ class Map extends React.Component {
     zoom: 11
   };
 
-
   render() {
-
     return (
-      <GoogleMap
-        apiKey={'AIzaSyDTbREAL0OVjYJ7OHRFSM0ng1CBc2jC7Pk'}
-        center={this.props.center}
-        zoom={this.props.zoom} >
+          <GoogleMap
+            apiKey={'AIzaSyDTbREAL0OVjYJ7OHRFSM0ng1CBc2jC7Pk'}
+            center={this.props.center}
+            zoom={this.props.zoom} >
 
-        <CurrentLocation lat={this.props.currentPosition.lat} lng={this.props.currentPosition.lng} />
-        <SearchBox className="searchBar" updateSearchCenter={this.props.updateSearchCenter}/>
+            <CurrentLocation lat={this.props.currentPosition.lat} lng={this.props.currentPosition.lng} />
+            <SearchBox className="searchBar" updateSearchCenter={this.props.updateSearchCenter}/>
 
-        {this.props.currentUser.vacant_rooms.map((marker, i) => {
-          return <MarkerComp  className="existingMarker" key={i}
-                              lat={parseFloat(marker.lat)}
-                              lng={parseFloat(marker.lng)}
-                              handleMarkerClick={this.props.handleMarkerClick}
-                              marker={marker} />
-        })}
+            {this.props.currentUser.vacant_rooms.map((marker, i) => {
+              return <MarkerComp  className="existingMarker" key={i}
+                                  lat={parseFloat(marker.lat)}
+                                  lng={parseFloat(marker.lng)}
+                                  handleMarkerClick={this.props.handleMarkerClick}
+                                  marker={marker} />
+            })}
 
-        </GoogleMap>
+            </GoogleMap>
     )
   }
 }
@@ -45,3 +43,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, actions)(Map);
+
+// { (coordsLoaded) ? <h1>Loading...</h1>

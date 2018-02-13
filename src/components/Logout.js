@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 
 
 class Logout extends React.Component {
+  
   handleLogout = () => {
     this.props.logoutUser();
     this.props.history.push("/login");

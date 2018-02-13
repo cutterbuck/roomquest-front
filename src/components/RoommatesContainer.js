@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 
 class RoommatesContainer extends React.Component {
+  
   state = {
     currentAssociation: this.props.currentUser.associations_without_rooms[0]
   }

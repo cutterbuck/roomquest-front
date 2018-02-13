@@ -6,8 +6,8 @@ import NavBar from './NavBar';
 import withAuth from '../hocs/withAuth';
 
 
-
 class Home extends React.Component {
+  
   componentDidMount() {
     this.props.getLocation();
   }

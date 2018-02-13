@@ -4,10 +4,7 @@ const google = window.google;
 
 
 class SearchBox extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   render() {
     return <input ref="input" {...this.props} type="text" placeholder="Search For a New Home"/>;
   }

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from './index';
 import './App.css';
 import Login from './components/Login';
 import Home from './components/Home';

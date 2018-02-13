@@ -2,10 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class RoomView extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   render() {
     const room = this.props.room
     const user = this.props.currentUser.associations_with_rooms.find(user => user.id === room.user_id);
@@ -15,7 +12,7 @@ class RoomView extends React.Component {
     <div class="parent">
       <div class="ui card">
         <div class="image">
-          <img src={user.profile_image_url} />
+          <img src={user.profile_image_url} alt={user.id} />
         </div>
         <div class="content">
           <div class="header">{user.name}</div>
