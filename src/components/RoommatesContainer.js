@@ -15,12 +15,6 @@ class RoommatesContainer extends React.Component {
     this.setState({currentAssociation: association})
   }
 
-  handleSelectDelete = e => {
-    //const id = this.props.currentUser.vacancy.id;
-    //this.props.deleteVacancy(id);
-    this.props.history.push("/app/thanks")
-  }
-
   render() {
     return (
       <div className="ui grid container">
