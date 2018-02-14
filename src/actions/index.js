@@ -62,6 +62,11 @@ export function postVacancy(data) {
       method: 'POST',
       headers,
       body: JSON.stringify({data})
+    }).then(resp => resp.json())
+    .then(json => {
+      const {address, apt_num, city, description, id} = json
+      const vacancy = {address, apt_num, city, description, id}
+      dispatch({ type: 'UPDATE_USER_VACANCY', vacancy })
     })
   }
 }

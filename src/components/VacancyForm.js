@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 
 class VacancyForm extends React.Component {
-  
+
    constructor(props) {
      super(props);
 

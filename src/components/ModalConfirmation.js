@@ -24,7 +24,7 @@ class ModalConfirmation extends React.Component {
 
     return (
       <div>
-        <Button color="violet" onClick={this.show('inverted')}>Select Roommate</Button>
+        <Button color="violet bottom attached fluid" onClick={this.show('inverted')}>Select Roommate</Button>
 
         <Modal dimmer={dimmer} open={open} onClose={this.close}>
           <Modal.Header>{this.props.association.name}</Modal.Header>

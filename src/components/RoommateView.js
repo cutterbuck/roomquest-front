@@ -19,7 +19,6 @@ class RoommateView extends React.Component {
         <ModalConfirmation association={association} />
       </div>
     </div>
-
     )
   }
 }
