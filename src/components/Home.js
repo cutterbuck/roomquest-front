@@ -7,13 +7,9 @@ import withAuth from '../hocs/withAuth';
 
 
 class Home extends React.Component {
-  
+
   componentDidMount() {
     this.props.getLocation();
-  }
-
-  handleClick = e => {
-    {this.props.currentUser.vacancy ? this.props.history.push("/app/roommates") : this.props.history.push("/app/add-vacancy")}
   }
 
   render() {
@@ -21,6 +17,8 @@ class Home extends React.Component {
     console.log('STATE -> CURRENT LOCATION', this.props.currentPosition)
     console.log('------------------------');
     const loggedIn = !!this.props.currentUser.name
+    var path = ""
+    this.props.currentUser.vacancy ? path = "/app/roommates" : path = "/app/add-vacancy"
 
     return (
       <div>
@@ -29,22 +27,24 @@ class Home extends React.Component {
           <div className="ui two column stackable grid">
             {loggedIn ? (<div className="first header"><h1 className="welcome">Welcome to Sherlock Homes, {this.props.currentUser.name.split(" ")[0]}</h1></div>) : null}
             <div className="column">
-                <div onClick={this.handleClick} className="welcome-button">
+              <div className="welcome-button">
+                <Link to={path}>
                   <div className="welcome content">
                     <div className="header"><h2 className="welcome headers">Find a Roommate</h2></div>
                     <div className="description">Is your roommate moving away?<br></br>Need to fill an empty room?<br></br><br></br>Post a vacancy to see which friends and acquaintances might be interested.</div>
                   </div>
-                </div>
+                </Link>
+              </div>
             </div>
             <div className="column">
-              <Link to={'/app/rooms'}>
-                <div className="welcome-button">
+              <div className="welcome-button">
+                <Link to={'/app/rooms'}>
                   <div className="welcome content">
                     <div className="header"><h2 className="welcome headers">Find a Room</h2></div>
-                      <div className="description">Looking for a place to live?<br></br>Moving to a new city?<br></br><br></br>See which friends and acquaintances have available rooms.</div>
+                    <div className="description">Looking for a place to live?<br></br>Moving to a new city?<br></br><br></br>See which friends and acquaintances have available rooms.</div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -3,9 +3,10 @@ import RoommateCards from './RoommateCards';
 import RoommateView from './RoommateView';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
+import { withRouter } from 'react-router';
 
 class RoommatesContainer extends React.Component {
-  
+
   state = {
     currentAssociation: this.props.currentUser.associations_without_rooms[0]
   }
@@ -15,8 +16,9 @@ class RoommatesContainer extends React.Component {
   }
 
   handleSelectDelete = e => {
-    const id = this.props.currentUser.vacancy.id;
-    this.props.deleteVacancy(id);
+    //const id = this.props.currentUser.vacancy.id;
+    //this.props.deleteVacancy(id);
+    this.props.history.push("/app/thanks")
   }
 
   render() {
@@ -24,7 +26,7 @@ class RoommatesContainer extends React.Component {
       <div className="ui grid container">
         <div className="ui two column stackable grid">
           <div className="rooms first header">
-            <h1 className="display rooms">Potential Roommates</h1>
+            <h1 className="display rooms">Available Roommates</h1>
           </div>
           <div className="seven wide column">
             <RoommateCards selectView={this.selectView} />
@@ -46,4 +48,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, actions)(RoommatesContainer);
+export default withRouter(connect(mapStateToProps, actions)(RoommatesContainer));

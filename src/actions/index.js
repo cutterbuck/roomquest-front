@@ -25,7 +25,6 @@ export function loginUser(response, history) {
       body: JSON.stringify({response})
     }).then(resp => resp.json())
     .then(user => {
-      // console.log('this is user in LOGINUSER', user)
       localStorage.setItem("token", user.code)
       dispatch({ type: 'LOGIN_USER', payload: user.currentUser })
       history.push("/home")
@@ -52,7 +51,7 @@ export function getLocation() {
 
 export function getVacancyGeoLocation(address) {
   return (dispatch) => {
-    return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyDTbREAL0OVjYJ7OHRFSM0ng1CBc2jC7Pk`)
+    return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLE}`)
     .then(resp => resp.json())
   }
 }

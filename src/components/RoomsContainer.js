@@ -8,7 +8,7 @@ import { Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 class RoomsContainer extends React.Component {
-  
+
   state = {
     center: {lat: 40.731134, lng: -73.984099},
     zoom: 11
@@ -71,7 +71,7 @@ class RoomsContainer extends React.Component {
           </div>
           <div className="ten wide column">
             <div class="ui sticky">
-            <div style={{width: '100%', height: '500px'}}>
+            <div style={{width: '100%', height: '550px'}}>
               <Map updateSearchCenter={this.updateSearchCenter}
                    center={this.state.center}
                    zoom={this.state.zoom}

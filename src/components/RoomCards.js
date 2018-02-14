@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import { Link } from 'react-router-dom';
 
-
 class RoomCards extends React.Component {
 
   render() {
     return (
-      <div class="ui special cards">
+      <div className="ui special cards">
         {this.props.currentUser.vacant_rooms.map((vr, i) => {
           const addressSlug = vr.address.split(" ").join("-")
           const user = this.props.currentUser.associations_with_rooms.find(user => user.id === vr.user_id);

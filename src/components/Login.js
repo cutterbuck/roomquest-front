@@ -5,10 +5,8 @@ import { connect }  from 'react-redux';
 
 
 class Login extends React.Component {
-  
+
   responseFacebook = (response) => {
-    console.log('------------------------------------');
-    console.log('TOTAL RESPONSE:', response);
     const history = this.props.history
     this.props.loginUser(response, history);
     history.push("/home");
@@ -28,7 +26,7 @@ class Login extends React.Component {
                   Find your new home!<br></br>
                   Search for your next roommate!
                 </div>
-                <FacebookLogin socialId='1824814727815715'          //{process.env.FACEBOOK_APP_ID}
+                <FacebookLogin socialId={process.env.REACT_APP_FACEBOOK_APP_ID}
                                className="facebook-login-button"
                                language="en_US"
                                scope="public_profile,email,user_friends"

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 
 class RoommateCards extends React.Component {
-  
+
   render() {
     return (
       <div class="ui fluid cards">

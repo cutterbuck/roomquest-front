@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class RoomView extends React.Component {
-  
+
   render() {
     const room = this.props.room
     const user = this.props.currentUser.associations_with_rooms.find(user => user.id === room.user_id);
@@ -35,7 +35,7 @@ class RoomView extends React.Component {
 
       <div class="back-button" onClick={this.props.resetCenter}>
         <Link to="/app/rooms">
-          <button className="ui button">Back</button>
+          <button className="ui blue button">Back</button>
         </Link>
       </div>
     </div>

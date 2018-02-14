@@ -15,7 +15,7 @@ class Map extends React.Component {
   render() {
     return (
           <GoogleMap
-            apiKey={'AIzaSyDTbREAL0OVjYJ7OHRFSM0ng1CBc2jC7Pk'}
+            bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE}`, libraries: "places" }}
             center={this.props.center}
             zoom={this.props.zoom} >
 
@@ -43,5 +43,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, actions)(Map);
-
-// { (coordsLoaded) ? <h1>Loading...</h1>

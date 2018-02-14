@@ -85,15 +85,14 @@
 }
 
 .first.header {
-  margin-top: 25px;
-  margin-bottom: 100px
-}
-
-.welcome {
-  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 80px;
+  text-align: left;
+  margin-left: 30px;
 }
 
 .welcome-button {
+  text-align: center;
   background-color: rgba(150,150,150,0.3);
   height: 160px;
   margin-left: 20px;
@@ -169,4 +168,12 @@
 
 .roommate-view-parent {
   max-width: 80%;
+}
+
+.display.rooms {
+  color: rgb(89,47,194);
+}
+
+.ui.modal.bottom.attached.violet.button.modal {
+  text-align: center;
 }
